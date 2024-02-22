@@ -1,0 +1,17 @@
+As a reference i took the 50000txt. in order to get bigger numbers. that helped me have a better understanding of whats happening.
+I run 10 times each one and i made an average
+I disregarded the reversed()txt. because i didnt think it would produce relevant data.
+I used Sorted 50000 and random 50000txt as best and worst case scenario.
+
+sort1 uses: Bubble Sort
+
+How do you know?: In the best case scenario Sort 1 and Sort 2 were almost the same and also the fastest. In worst case Sort 1 was very time consuming while Sort 2 was very fast.
+So Sort 1 does seem to have the Big O and Big Omega discrepancy.
+
+sort2 uses: Merge Sort
+
+How do you know?: In the best and worst case scenario Sort 1 was the fastest. Sort 2 does seem to apply the Big O and Big Omega equivalence.
+
+sort3 uses: Selection Sort
+
+How do you know?: In the best and worst case scenario Sort 3 was average in speed. Sort 3 does seem to apply the Big O and Big Omega equivalence.
