@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", function() {
+                // Trivia Part
+                const question1 = document.querySelector("#question1");
+                const choices1 = document.querySelectorAll(".choice1");
+                const feedback1 = document.querySelector("#feedback1");
+
+                // Free response Part
+                const answer2 = document.querySelector("#answer2");
+                const submitButton2 = document.querySelector("#submit2");
+                const feedback2 = document.querySelector("#feedback2");
+
+                // Check Multiple
+                function checkMultipleChoiceAnswer(correctChoice, chosenChoice) {
+                    choices1.forEach((choice) => {
+                        choice.disabled = true;
+                    });
+
+                    if (correctChoice === chosenChoice) {
+                        feedback1.textContent = "Correct!";
+                        feedback1.style.color = "green";
+                    } else {
+                        feedback1.textContent = "Incorrect";
+                        feedback1.style.color = "red";
+                    }
+                }
+
+                // Check Free Response
+                submitButton2.addEventListener("click", function() {
+                    answer2.disabled = true;
+                    if (answer2.value.trim().toLowerCase() === "uranus") {
+                        feedback2.textContent = "Correct!";
+                        feedback2.style.color = "green";
+                    } else {
+                        feedback2.textContent = "Incorrect";
+                        feedback2.style.color = "red";
+                    }
+                });
+                choices1.forEach((choice) => {
+                    choice.addEventListener("click", function() {
+                        checkMultipleChoiceAnswer("Supernova", choice.value);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3 id="question1">What can a red giant star become?</h3>
+                <button class="choice1" value="Supernova">Supernova</button>
+                <button class="choice1" value="Red Dwarf Star">Red Dwarf Star</button>
+                <button class="choice1" value="White Giant Star">White Giant Star</button>
+                <button class="choice1" value="White Dwarf Star">White Dwarf Star</button>
+                <div id="feedback1"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3 id="question2">The chemical element uranium was named after which planet?</h3>
+                <input type="text" id="answer2">
+                <button id="submit2">Submit</button>
+                <div id="feedback2"></div>
+            </div>
+        </div>
+    </body>
+
+</html>

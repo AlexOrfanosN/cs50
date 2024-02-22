@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Deposit
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('deposit') }}" method="post">
+        <div class="form-group">
+            <label for="amount">Amount to deposit:</label>
+            <input class="form-control" name="amount" id="amount" placeholder="Enter amount" type="number" min="1" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Deposit</button>
+    </form>
+{% endblock %}
